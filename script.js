@@ -1,3 +1,4 @@
+// Student database parsed from context[cite: 3]
 const studentDatabase = {
   "241-115-213": { name: "Tashin Islam Safat", section: "A" },
   "242-115-001": { name: "Nafisa Anjum Riana", section: "A" },
@@ -80,55 +81,56 @@ const studentDatabase = {
   "242-115-100": { name: "Nobonita Das Pushon", section: "B" }
 };
 
+// Section-wise faculty list parsed from context[cite: 3]
 const facultyDatabase = {
   "A": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Fardin Ahasan Maraz", dept: "Department of Electrical & Electronic Engineering", desig: "Professor" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Department of Business Administration", desig: "Professor" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Fardin Ahasan Maraz", dept: "Electrical & Electronic Engineering", desig: "Professor" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Business Administration", desig: "Professor" }
   ],
   "B": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Fardin Ahasan Maraz", dept: "Department of Electrical & Electronic Engineering", desig: "Professor" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Department of Business Administration", desig: "Professor" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Fardin Ahasan Maraz", dept: "Electrical & Electronic Engineering", desig: "Professor" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Business Administration", desig: "Professor" }
   ],
   "C": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Department of Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Department of Business Administration", desig: "Lecturer" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
   ],
   "D": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman.", dept: "Department of Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Department of Business Administration", desig: "Lecturer" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
   ],
   "E": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Afif Rafsan", dept: "Department of Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Department of Business Administration", desig: "Lecturer" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Afif Rafsan", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
   ],
   "F": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Afif Rafsan", dept: "Department of Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Department of Business Administration", desig: "Lecturer" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Afif Rafsan", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
   ],
   "G": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Department of Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Department of Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Department of Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Department of Business Administration", desig: "Professor" }
+    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
+    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
+    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
+    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Business Administration", desig: "Professor" }
   ]
 };
 
@@ -154,6 +156,8 @@ function handleModeChange() {
   const outSingleStudent = document.getElementById('out-single-student');
   const outGroupStudents = document.getElementById('out-group-students');
 
+  syncSectionInputVisibility();
+
   if (mode === 'group') {
     singleContainer.style.display = "none";
     groupContainer.style.display = "block";
@@ -176,36 +180,18 @@ function handleEntryTypeChange() {
   const entryType = document.getElementById('in-entry-type').value;
   const singleIdBox = document.getElementById('single-id-box');
   const customStudentFields = document.getElementById('custom-student-fields');
-  const autoFacultyContainer = document.getElementById('auto-faculty-container');
   const isCustom = entryType === 'custom';
 
-  if (isCustom) {
-    singleIdBox.style.display = "none";
-    customStudentFields.style.display = "block";
-    autoFacultyContainer.style.display = "none";
+  syncSectionInputVisibility();
 
+  if (isCustom) {
+    singleIdBox.style.display = "block";
+    customStudentFields.style.display = "block";
     document.getElementById('in-student-name').readOnly = false;
-    document.getElementById('in-course').readOnly = false;
-    document.getElementById('in-code').readOnly = false;
-    document.getElementById('in-prof-name').readOnly = false;
-    document.getElementById('in-prof-desig').readOnly = false;
-    document.getElementById('in-prof-dept').readOnly = false;
   } else {
     singleIdBox.style.display = "block";
     customStudentFields.style.display = "none";
-    autoFacultyContainer.style.display = "block";
-
     document.getElementById('in-student-name').readOnly = true;
-    document.getElementById('in-course').readOnly = true;
-    document.getElementById('in-code').readOnly = true;
-    document.getElementById('in-prof-name').readOnly = true;
-    document.getElementById('in-prof-desig').readOnly = true;
-    document.getElementById('in-prof-dept').readOnly = true;
-  }
-
-  const grpIds = document.getElementsByClassName('grp-mem-id');
-  for (let input of grpIds) {
-    input.style.display = isCustom ? "none" : "block";
   }
 
   const grpNames = document.getElementsByClassName('grp-mem-name');
@@ -216,13 +202,70 @@ function handleEntryTypeChange() {
   updatePreview();
 }
 
+function handleTeacherEntryTypeChange() {
+  const teacherEntryType = document.getElementById('in-teacher-entry-type').value;
+  const autoFacultyContainer = document.getElementById('auto-faculty-container');
+  const isCustomTeacher = teacherEntryType === 'custom';
+
+  if (isCustomTeacher) {
+    autoFacultyContainer.style.display = "none";
+    document.getElementById('in-course').readOnly = false;
+    document.getElementById('in-code').readOnly = false;
+    document.getElementById('in-prof-name').readOnly = false;
+    document.getElementById('in-prof-desig').readOnly = false;
+    document.getElementById('in-prof-dept').readOnly = false;
+  } else {
+    autoFacultyContainer.style.display = "block";
+    document.getElementById('in-course').readOnly = true;
+    document.getElementById('in-code').readOnly = true;
+    document.getElementById('in-prof-name').readOnly = true;
+    document.getElementById('in-prof-desig').readOnly = true;
+    document.getElementById('in-prof-dept').readOnly = true;
+    updateFacultyDropdown(currentSection);
+  }
+  updatePreview();
+}
+
+function syncSectionInputVisibility() {
+  const mode = document.getElementById('in-mode').value;
+  const entryType = document.getElementById('in-entry-type').value;
+  const sectionWrapper = document.getElementById('section-input-wrapper');
+
+  // Show section input manually if in Group Mode OR Custom Entry Mode
+  if (mode === 'group' || entryType === 'custom') {
+    sectionWrapper.style.display = "block";
+  } else {
+    sectionWrapper.style.display = "none";
+  }
+}
+
+function handleManualSectionChange() {
+  const secInput = document.getElementById('in-section').value.trim();
+  if (secInput !== "") {
+    currentSection = secInput.toUpperCase();
+    if (document.getElementById('in-teacher-entry-type').value === 'auto') {
+      updateFacultyDropdown(currentSection);
+    }
+  }
+  updatePreview();
+}
+
 function handleSingleIdInput() {
+  const entryType = document.getElementById('in-entry-type').value;
+  if (entryType === 'custom') {
+    updatePreview();
+    return;
+  }
+
   const idVal = document.getElementById('in-student-id').value.trim();
   const nameInput = document.getElementById('in-student-name');
   if (studentDatabase[idVal]) {
     nameInput.value = studentDatabase[idVal].name;
     currentSection = studentDatabase[idVal].section;
-    updateFacultyDropdown(currentSection);
+    document.getElementById('in-section').value = currentSection;
+    if (document.getElementById('in-teacher-entry-type').value === 'auto') {
+      updateFacultyDropdown(currentSection);
+    }
   } else {
     nameInput.value = "";
   }
@@ -230,17 +273,20 @@ function handleSingleIdInput() {
 }
 
 function handleMemberIdInput(index) {
+  const entryType = document.getElementById('in-entry-type').value;
   const row = document.getElementById(`member-row-${index}`);
   if (!row) return;
+
+  if (entryType === 'custom') {
+    updatePreview();
+    return;
+  }
+
   const idVal = row.querySelector('.grp-mem-id').value.trim();
   const nameInput = row.querySelector('.grp-mem-name');
 
   if (studentDatabase[idVal]) {
     nameInput.value = studentDatabase[idVal].name;
-    if (index === 1) {
-      currentSection = studentDatabase[idVal].section;
-      updateFacultyDropdown(currentSection);
-    }
   } else {
     nameInput.value = "";
   }
@@ -323,7 +369,7 @@ function addGroupMemberField() {
   const isCustom = entryType === 'custom';
 
   row.innerHTML = `
-    <input type="text" class="grp-mem-id" placeholder="ID (e.g. 242-115-079)" oninput="handleMemberIdInput(${memberCount})" style="display: ${isCustom ? 'none' : 'block'};">
+    <input type="text" class="grp-mem-id" placeholder="ID (e.g. 242-115-079)" oninput="handleMemberIdInput(${memberCount})">
     <input type="text" class="grp-mem-name" placeholder="Member Name" oninput="updatePreview()" ${isCustom ? '' : 'readonly'}>
     <button type="button" class="remove-member-btn" onclick="removeGroupMemberField(${memberCount})">×</button>
   `;
@@ -363,13 +409,20 @@ function updatePreview() {
   document.getElementById('out-assign-title').innerText = document.getElementById('in-assign-title').value || "";
   document.getElementById('out-group-name').innerText = document.getElementById('in-group-name').value || "...";
 
-  const isCustom = document.getElementById('in-entry-type').value === 'custom';
-  if (isCustom) {
-    document.getElementById('out-section').innerText = document.getElementById('in-section').value || "B";
+  const mode = document.getElementById('in-mode').value;
+  const isCustomStudent = document.getElementById('in-entry-type').value === 'custom';
+  
+  const manualSecVal = document.getElementById('in-section').value.trim();
+  if (manualSecVal !== "") {
+    document.getElementById('out-section').innerText = manualSecVal;
+  } else {
+    document.getElementById('out-section').innerText = currentSection;
+  }
+
+  if (isCustomStudent) {
     document.getElementById('out-batch').innerHTML = document.getElementById('in-batch').value || "61<sup>st</sup>";
     document.getElementById('out-student-dept').innerText = document.getElementById('in-student-dept').value || "Department of Computer Science and Engineering";
   } else {
-    document.getElementById('out-section').innerText = currentSection;
     document.getElementById('out-batch').innerHTML = "61<sup>st</sup>";
     document.getElementById('out-student-dept').innerText = "Department of Computer Science and Engineering";
   }
@@ -377,7 +430,6 @@ function updatePreview() {
   document.getElementById('out-student-name').innerText = document.getElementById('in-student-name').value || "...";
   document.getElementById('out-student-id').innerText = document.getElementById('in-student-id').value || "...";
 
-  const mode = document.getElementById('in-mode').value;
   if (mode === 'group') {
     const names = document.getElementsByClassName('grp-mem-name');
     const ids = document.getElementsByClassName('grp-mem-id');
@@ -385,7 +437,7 @@ function updatePreview() {
     tbody.innerHTML = "";
     for (let i = 0; i < names.length; i++) {
       const mName = names[i].value || "...";
-      const mId = (!isCustom && ids[i]) ? (ids[i].value || "...") : "N/A";
+      const mId = ids[i] ? (ids[i].value || "...") : "N/A";
       const tr = document.createElement('tr');
       tr.innerHTML = `<td>${mName}</td><td style="text-align:center;">${mId}</td>`;
       tbody.appendChild(tr);
@@ -397,6 +449,6 @@ function updatePreview() {
 }
 
 window.onload = function() {
-  updateFacultyDropdown("B");
+  handleTeacherEntryTypeChange();
   handleEntryTypeChange();
 };
