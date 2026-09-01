@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MU Automated Cover Page Maker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="no-print">
+<div class="form-container">
+<h1>Cover Page Maker @Vlackfie</h1>
+<div class="form-grid">
+
+  <!-- Document Heading -->
+  <div class="section-label">1. Document Heading</div>
+  <select id="in-doc-type" onchange="handleDocTypeChange()">
+    <option value="Assignment">Assignment</option>
+    <option value="Lab Report">Lab Report</option>
+    <option value="Project">Project</option>
+    <option value="Custom">Custom Heading</option>
+  </select>
+  <input type="text" id="in-custom-heading" placeholder="Enter custom heading (e.g., Thesis, Case Study)" oninput="updatePreview()" style="display: none; margin-top: 6px;">
+
+  <!-- Submission Mode & Data Entry Type -->
+  <div class="section-label">2. Mode & Entry Type</div>
+  <select id="in-mode" onchange="handleModeChange()">
+    <option value="individual">Individual</option>
+    <option value="group">Group</option>
+  </select>
+
+  <select id="in-entry-type" onchange="handleEntryTypeChange()" style="margin-top: 6px;">
+    <option value="auto">Auto (Insert Student ID)</option>
+    <option value="custom">Custom (Manual Entry)</option>
+  </select>
+
+  <!-- Individual Details -->
+  <div id="single-student-container">
+    <div class="section-label">3. Student Details</div>
+    <div id="single-id-box">
+      <input type="text" id="in-student-id" placeholder="Student ID (e.g., 242-115-079)" oninput="handleSingleIdInput()">
+    </div>
+    <input type="text" id="in-student-name" placeholder="Student Name" oninput="updatePreview()">
+  </div>
+
+  <!-- Group Details -->
+  <div id="group-input-container" style="display: none;">
+    <div class="section-label">3. Group Details</div>
+    <div class="checkbox-wrapper">
+      <input type="checkbox" id="check-group-name" onchange="toggleGroupNameInput()">
+      <label for="check-group-name">Add Group Name?</label>
+    </div>
+    <input type="text" id="in-group-name" placeholder="e.g. Team Alpha" oninput="updatePreview()" style="display: none; margin-bottom: 10px;">
+    
+    <div id="member-fields-wrapper"></div>
+    <button type="button" class="add-member-btn" onclick="addGroupMemberField()">+ Add Group Member</button>
+  </div>
+
+  <!-- Common Student Fields for Custom Mode -->
+  <div id="custom-student-fields" style="display: none;">
+    <div class="section-label">Section & Academic Info</div>
+    <input type="text" id="in-section" placeholder="Section (e.g., B)" oninput="updatePreview()">
+    <input type="text" id="in-batch" placeholder="Batch (e.g., 61st)" oninput="updatePreview()">
+    <input type="text" id="in-student-dept" placeholder="Department" oninput="updatePreview()">
+  </div>
+
+  <!-- Course & Teacher Selection / Custom Fields -->
+  <div class="section-label">4. Faculty & Course Details</div>
+  <div id="auto-faculty-container">
+    <select id="in-course-select" onchange="handleCourseTeacherChange()">
+      <option value="">Select Course / Teacher</option>
+    </select>
+  </div>
+
+  <input type="text" id="in-course" placeholder="Course Title" oninput="updatePreview()">
+  <input type="text" id="in-code" placeholder="Course Code" oninput="updatePreview()">
+  <input type="text" id="in-prof-name" placeholder="Teacher's Name" oninput="updatePreview()">
+  <input type="text" id="in-prof-desig" placeholder="Teacher's Designation" oninput="updatePreview()">
+  <input type="text" id="in-prof-dept" placeholder="Teacher's Department" oninput="updatePreview()">
+
+  <!-- Optional Specific Title -->
+  <div class="section-label">5. Specific Title (Optional)</div>
+  <div class="checkbox-wrapper">
+    <input type="checkbox" id="check-title" onchange="toggleTitleInput()">
+    <label for="check-title">Add Specific Title/Topic?</label>
+  </div>
+  <input type="text" id="in-assign-title" placeholder="e.g. Impact of AI on Business" oninput="updatePreview()" style="display: none;">
+
+  <!-- Submission Date -->
+  <div class="section-label">6. Submission Date</div>
+  <input type="date" id="in-date" oninput="updatePreview()">
+
+</div>
+<button onclick="window.print()" class="print-btn">Print / Save as PDF</button>
+</div>
+</div>
+
+<!-- PDF PREVIEW SECTION -->
+<div id="cover-template" class="pdf-page">
+<div class="logo-wrapper">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/MU_Logo.svg/960px-MU_Logo.svg.png" alt="MU Logo">
+</div>
+<div class="title-group">
+<h2 class="main-title"><span id="out-doc-type">Assignment</span></h2>
+<h3 id="out-assign-title" class="sub-assignment-title"></h3>
+</div>
+<div class="content-body">
+<div class="course-section">
+<p><strong>Course Title:</strong> <span id="out-course">...</span></p>
+<p><strong>Course Code:</strong> <span id="out-code">...</span></p>
+</div>
+<div class="info-block">
+<h3 class="sub-label">Submitted to:</h3>
+<p class="bold-text">Name: <span id="out-prof-name">...</span></p>
+<p id="out-prof-desig">...</p>
+<p id="out-prof-dept">...</p>
+<p>Metropolitan University</p>
+</div>
+<div class="info-block">
+<h3 class="sub-label">Submitted by:</h3>
+<p id="out-group-name-wrapper" class="bold-text" style="display: none; margin-bottom: 8px;">
+Group: <span id="out-group-name">...</span>
+</p>
+<div id="out-single-student">
+<p class="bold-text">Name: <span id="out-student-name">...</span></p>
+<p class="bold-text">ID: <span id="out-student-id">...</span></p>
+</div>
+<div id="out-group-students" style="display: none; margin: 10px auto; width: 85%;">
+<table class="member-table">
+<thead>
+<tr>
+<th>Name</th>
+<th>ID</th>
+</tr>
+</thead>
+<tbody id="out-member-rows"></tbody>
+</table>
+</div>
+<div class="static-student-info">
+<p>Section: <span id="out-section">B</span></p>
+<p>Batch: <span id="out-batch">61<sup>st</sup></span></p>
+<p id="out-student-dept">Department of Computer Science and Engineering</p>
+<p>Metropolitan University</p>
+</div>
+</div>
+<div class="date-section">
+<p><strong>Date of Submission:</strong> <span id="out-date"></span></p>
+</div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
