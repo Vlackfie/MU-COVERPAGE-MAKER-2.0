@@ -31,6 +31,14 @@ body {
   margin-top: 12px; 
 }
 
+.field-sub-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 2px;
+  display: block;
+}
+
 .checkbox-wrapper { 
   display: flex; 
   align-items: center; 
