@@ -9,9 +9,9 @@
 <body>
   <div class="no-print">
     <div class="form-container">
-      <h1>Cover Page Maker @Vlackfie</h1>
+      <h1>Cover Page Maker</h1>
+      
       <div class="form-grid">
-        
         <!-- 1. Document Heading -->
         <div class="section-label">1. Document Heading</div>
         <select id="in-doc-type" onchange="handleDocTypeChange()">
@@ -20,92 +20,94 @@
           <option value="Project">Project</option>
           <option value="Custom">Custom Heading</option>
         </select>
-        <input type="text" id="in-custom-heading" placeholder="Enter custom heading (e.g., Thesis, Case Study)" oninput="updatePreview()" style="display: none; margin-top: 6px;">
+        <input type="text" id="in-custom-heading" placeholder="Enter custom heading (e.g., Thesis)" oninput="updatePreview()" style="display: none; margin-top: 6px;">
 
-        <!-- 2. Submission Mode & Entry Type -->
-        <div class="section-label">2. Student Mode & Entry Type</div>
-        <select id="in-mode" onchange="handleModeChange()">
-          <option value="individual">Individual</option>
-          <option value="group">Group</option>
-        </select>
-
-        <select id="in-entry-type" onchange="handleEntryTypeChange()" style="margin-top: 6px;">
-          <option value="auto">Auto (ID Lookup)</option>
-          <option value="custom">Custom (Manual Entry)</option>
-        </select>
-
-        <!-- Section Selection (Visible in Group Mode or Custom Mode) -->
-        <div id="section-input-wrapper" style="display: none; margin-top: 6px;">
-          <label class="field-sub-label">Section:</label>
-          <input type="text" id="in-section" placeholder="Enter Section (e.g., B)" oninput="handleManualSectionChange()">
-        </div>
-
-        <!-- 3. Individual Student Details -->
-        <div id="single-student-container">
-          <div class="section-label">3. Student Details</div>
-          <div id="single-id-box">
-            <input type="text" id="in-student-id" placeholder="Student ID (e.g., 242-115-079)" oninput="handleSingleIdInput()">
-          </div>
-          <input type="text" id="in-student-name" placeholder="Student Name" oninput="updatePreview()">
-        </div>
-
-        <!-- 4. Group Details -->
-        <div id="group-input-container" style="display: none;">
-          <div class="section-label">3. Group Details</div>
-          <div class="checkbox-wrapper">
-            <input type="checkbox" id="check-group-name" onchange="toggleGroupNameInput()">
-            <label for="check-group-name">Add Group Name?</label>
-          </div>
-          <input type="text" id="in-group-name" placeholder="e.g. Team Alpha" oninput="updatePreview()" style="display: none; margin-bottom: 10px;">
-          
-          <div id="member-fields-wrapper"></div>
-          <button type="button" class="add-member-btn" onclick="addGroupMemberField()">+ Add Group Member</button>
-        </div>
-
-        <!-- 5. Custom Student Information (Batch & Department) -->
-        <div id="custom-student-fields" style="display: none;">
-          <div class="section-label">Academic Info</div>
-          <input type="text" id="in-batch" placeholder="Batch (e.g., 61st)" oninput="updatePreview()">
-          <input type="text" id="in-student-dept" placeholder="Department" oninput="updatePreview()">
-        </div>
-
-        <!-- 6. Faculty & Course Details -->
-        <div class="section-label">4. Faculty & Course Details</div>
-        <select id="in-teacher-entry-type" onchange="handleTeacherEntryTypeChange()">
-          <option value="auto">Auto Select Teacher</option>
-          <option value="custom">Custom Teacher Entry</option>
-        </select>
-
-        <div id="auto-faculty-container" style="margin-top: 6px;">
-          <select id="in-course-select" onchange="handleCourseTeacherChange()">
-            <option value="">Select Course / Teacher</option>
-          </select>
-        </div>
-
-        <input type="text" id="in-course" placeholder="Course Title" oninput="updatePreview()" style="margin-top: 6px;">
-        <input type="text" id="in-code" placeholder="Course Code" oninput="updatePreview()">
-        <input type="text" id="in-prof-name" placeholder="Teacher's Name" oninput="updatePreview()">
-        <input type="text" id="in-prof-desig" placeholder="Teacher's Designation" oninput="updatePreview()">
-        <input type="text" id="in-prof-dept" placeholder="Teacher's Department" oninput="updatePreview()">
-
-        <!-- 7. Optional Specific Title -->
-        <div class="section-label">5. Specific Title (Optional)</div>
+        <!-- Specific Title -->
         <div class="checkbox-wrapper">
           <input type="checkbox" id="check-title" onchange="toggleTitleInput()">
           <label for="check-title">Add Specific Title/Topic?</label>
         </div>
         <input type="text" id="in-assign-title" placeholder="e.g. Impact of AI on Business" oninput="updatePreview()" style="display: none;">
 
-        <!-- 8. Submission Date -->
-        <div class="section-label">6. Submission Date</div>
-        <input type="date" id="in-date" oninput="updatePreview()">
+        <!-- 2. Mode Selection -->
+        <div class="section-label">2. Mode Selection</div>
+        <select id="in-mode" onchange="handleModeChange()">
+          <option value="individual">Individual</option>
+          <option value="group">Group</option>
+        </select>
 
+        <!-- Entry Method Selection -->
+        <div class="section-label">Entry Method</div>
+        <select id="in-entry-type" onchange="handleEntryTypeChange()">
+          <option value="auto">Auto (ID Lookup)</option>
+          <option value="custom">Custom</option>
+        </select>
+
+        <!-- Individual Auto Input -->
+        <div id="ind-auto-container">
+          <div class="section-label">Student ID</div>
+          <input type="text" id="in-ind-id" placeholder="Enter Student ID (e.g. 242-115-079)" oninput="handleIndAutoLookup()">
+        </div>
+
+        <!-- Group Auto Input -->
+        <div id="grp-auto-container" style="display: none;">
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="check-group-name" onchange="toggleGroupNameInput()">
+            <label for="check-group-name">Add Group Name?</label>
+          </div>
+          <input type="text" id="in-group-name" placeholder="e.g. Team Alpha" oninput="updatePreview()" style="display: none; margin-bottom: 10px;">
+          
+          <div id="group-member-lookup-wrapper"></div>
+          <button type="button" class="add-member-btn" onclick="addGroupAutoMemberField()">+ Add Group Member (ID)</button>
+        </div>
+
+        <!-- Custom Mode Container (Individual & Group Custom) -->
+        <div id="custom-fields-container" style="display: none;">
+          <div id="custom-student-fields">
+            <div class="section-label">Student Information</div>
+            <input type="text" id="cust-student-name" placeholder="Student Name" oninput="updatePreview()">
+            <input type="text" id="cust-student-id" placeholder="Student ID" oninput="updatePreview()">
+            <div id="cust-ind-extra">
+              <input type="text" id="cust-section" placeholder="Section (e.g. B)" oninput="updatePreview()">
+              <input type="text" id="cust-batch" placeholder="Batch (e.g. 61st)" oninput="updatePreview()">
+              <input type="text" id="cust-dept" placeholder="Department" oninput="updatePreview()">
+            </div>
+          </div>
+
+          <div id="custom-group-members" style="display: none;">
+            <div class="section-label">Group Members (Custom)</div>
+            <div id="custom-member-fields-wrapper"></div>
+            <button type="button" class="add-member-btn" onclick="addCustomGroupMemberField()">+ Add Member</button>
+          </div>
+
+          <div id="custom-teacher-fields">
+            <div class="section-label">Teacher Details</div>
+            <input type="text" id="cust-teacher-name" placeholder="Teacher's Name" oninput="updatePreview()">
+            <input type="text" id="cust-teacher-desig" placeholder="Teacher's Designation" oninput="updatePreview()">
+            <input type="text" id="cust-teacher-dept" placeholder="Teacher's Department" oninput="updatePreview()">
+            <input type="text" id="cust-course-name" placeholder="Course Title" oninput="updatePreview()">
+            <input type="text" id="cust-course-code" placeholder="Course Code" oninput="updatePreview()">
+          </div>
+        </div>
+
+        <!-- Faculty Selection (Auto Mode) -->
+        <div id="auto-faculty-container">
+          <div class="section-label">Select Course / Faculty</div>
+          <select id="in-prof-name" onchange="autoFillFacultyDetails()">
+            <option value="">-- Select Faculty --</option>
+          </select>
+        </div>
+
+        <!-- Date -->
+        <div class="section-label">Submission Date</div>
+        <input type="date" id="in-date" oninput="updatePreview()">
       </div>
+      
       <button onclick="window.print()" class="print-btn">Print / Save as PDF</button>
     </div>
   </div>
 
-  <!-- PDF PREVIEW TEMPLATE -->
+  <!-- PDF Document Output Template -->
   <div id="cover-template" class="pdf-page">
     <div class="logo-wrapper">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/MU_Logo.svg/960px-MU_Logo.svg.png" alt="MU Logo">
@@ -128,6 +130,7 @@
       </div>
       <div class="info-block">
         <h3 class="sub-label">Submitted by:</h3>
+        
         <p id="out-group-name-wrapper" class="bold-text" style="display: none; margin-bottom: 8px;">
           Group: <span id="out-group-name">...</span>
         </p>
@@ -149,15 +152,16 @@
         <div class="static-student-info">
           <p>Section: <span id="out-section">B</span></p>
           <p>Batch: <span id="out-batch">61<sup>st</sup></span></p>
-          <p id="out-student-dept">Department of Computer Science and Engineering</p>
+          <p><span id="out-dept">Department of Computer Science and Engineering</span></p>
           <p>Metropolitan University</p>
         </div>
       </div>
       <div class="date-section">
-        <p><strong>Date of Submission:</strong> <span id="out-date"></span></p>
+        <p><strong>Date of Submission:</strong> <span id="out-date">__________________</span></p>
       </div>
-    </div>
+    </div> 
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
