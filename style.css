@@ -4,25 +4,21 @@ body {
   margin: 0; 
   padding: 20px; 
 }
-
 .no-print { 
   max-width: 600px; 
   margin: 0 auto 30px; 
 }
-
 .form-container { 
   background: white; 
   padding: 20px; 
   border-radius: 8px; 
   box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
 }
-
 .form-grid { 
   display: grid; 
   grid-template-columns: 1fr; 
   gap: 6px; 
 }
-
 .section-label { 
   font-weight: bold; 
   font-size: 11px; 
@@ -30,34 +26,22 @@ body {
   text-transform: uppercase; 
   margin-top: 12px; 
 }
-
-.field-sub-label {
-  font-size: 12px;
-  font-weight: bold;
-  color: #555;
-  margin-bottom: 2px;
-  display: block;
-}
-
 .checkbox-wrapper { 
   display: flex; 
   align-items: center; 
   gap: 8px; 
   margin: 5px 0; 
 }
-
 .checkbox-wrapper input { 
   width: auto; 
   cursor: pointer; 
 }
-
 .checkbox-wrapper label { 
   font-size: 13px; 
   color: #444; 
   cursor: pointer; 
   font-weight: bold; 
 }
-
 input, select { 
   padding: 10px; 
   border: 1px solid #ccc; 
@@ -66,22 +50,19 @@ input, select {
   box-sizing: border-box; 
   font-size: 14px; 
 }
-
 input[readonly] { 
   background: #f1f3f9; 
   color: #444; 
   border: 1px solid #d1d9e6; 
   cursor: not-allowed; 
 }
-
-#group-input-container { 
+#group-input-container, #grp-auto-container, #custom-fields-container { 
   background: #f9f9fc; 
   padding: 12px; 
   border-radius: 6px; 
   border: 1px dashed #1a237e; 
   margin-bottom: 10px; 
 }
-
 .member-input-row { 
   display: grid; 
   grid-template-columns: 1fr 1fr auto; 
@@ -89,18 +70,16 @@ input[readonly] {
   margin-bottom: 8px; 
   align-items: center; 
 }
-
 .add-member-btn { 
   background: #1a237e; 
   color: white; 
   border: none; 
-  padding: 6px 12px; 
+  padding: 8px 12px; 
   border-radius: 4px; 
   cursor: pointer; 
   font-size: 12px; 
   margin-top: 5px; 
 }
-
 .remove-member-btn { 
   background: #d32f2f; 
   color: white; 
@@ -110,7 +89,6 @@ input[readonly] {
   cursor: pointer; 
   font-weight: bold; 
 }
-
 .print-btn { 
   width: 100%; 
   padding: 15px; 
@@ -124,6 +102,7 @@ input[readonly] {
   font-size: 16px; 
 }
 
+/* PDF Template Visual Layout */
 .pdf-page {
   background: white; 
   width: 210mm; 
@@ -137,95 +116,79 @@ input[readonly] {
   border: 1px solid #ddd; 
   overflow: hidden;
 }
-
 .logo-wrapper img { 
   width: 100%; 
   max-width: 480px; 
   height: auto; 
   margin-bottom: 5px; 
 }
-
 .title-group { 
   text-align: center; 
   margin: 17px 0; 
   min-height: 60px; 
 }
-
 .main-title { 
   font-size: 25pt; 
   margin: 0; 
   text-decoration: underline; 
   font-weight: bold; 
 }
-
 .sub-assignment-title { 
   font-size: 18pt; 
   margin-top: 8px; 
   font-style: normal; 
   color: #333; 
 }
-
 .content-body { 
   width: 100%; 
   text-align: center; 
 }
-
 .course-section p { 
   font-size: 17pt; 
   margin: 1px 0; 
 }
-
 .info-block { 
   margin-top: 17px; 
 }
-
 .sub-label { 
   font-size: 18pt; 
   text-decoration: underline; 
   margin-bottom: 4px; 
 }
-
 .info-block p { 
   margin: 1px 0; 
   font-size: 14pt; 
   line-height: 1.2; 
 }
-
 .bold-text { 
   font-weight: bold; 
   font-size: 17pt; 
 }
-
 .static-student-info { 
   margin-top: 5px; 
 }
-
 .date-section { 
   margin-top: 26px; 
   font-size: 18pt; 
   font-weight: bold; 
 }
-
 .member-table { 
   width: 100%; 
   border-collapse: collapse; 
   margin-top: 8px; 
   font-family: "Times New Roman", serif; 
 }
-
 .member-table th, .member-table td { 
   border: 1px solid #333; 
   padding: 6px; 
   font-size: 13pt; 
   text-align: left; 
 }
-
 .member-table th { 
   background-color: #f2f2f2; 
   font-weight: bold; 
   text-align: center; 
 }
-
 .member-table td:first-child { 
   font-weight: bold; 
 }
