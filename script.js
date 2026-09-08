@@ -1,5 +1,5 @@
-// Student database parsed from context[cite: 3]
-const studentDatabase = {
+// Student database parsed from provided text
+const studentsDatabase = {
   "241-115-213": { name: "Tashin Islam Safat", section: "A" },
   "242-115-001": { name: "Nafisa Anjum Riana", section: "A" },
   "242-115-002": { name: "Anik Mazumder", section: "A" },
@@ -78,257 +78,223 @@ const studentDatabase = {
   "242-115-097": { name: "Sadia Sultana", section: "B" },
   "242-115-098": { name: "Brishti Rani Das", section: "B" },
   "242-115-099": { name: "Purbak Talukder Dony", section: "B" },
-  "242-115-100": { name: "Nobonita Das Pushon", section: "B" }
+  "242-115-100": { name: "Nobonita Das Pushon", section: "B" },
+  "242-115-085": { name: "Sumaiya Jannat Shima", section: "C" },
+  "242-115-101": { name: "Debojoty Roy Thirtho", section: "C" },
+  "242-115-103": { name: "Jannatul Ferdous Jannat", section: "C" },
+  "242-115-107": { name: "Maksura Rahman Zim", section: "C" },
+  "242-115-111": { name: "Miftahur Rahman Omi", section: "C" },
+  "242-115-113": { name: "Sojon Sarker", section: "C" },
+  "242-115-114": { name: "Srishty Talukder Mimi", section: "C" },
+  "242-115-115": { name: "Muntaha Akram Chowdhury", section: "C" },
+  "242-115-116": { name: "Muhammad Farhanul Islam", section: "C" },
+  "242-115-117": { name: "Nobonita Das Tonny", section: "C" },
+  "242-115-120": { name: "Tonny Shree Dey Trina", section: "C" },
+  "242-115-121": { name: "Nusrath Jahan Chowdhury", section: "C" },
+  "242-115-123": { name: "Rini Begum Kulsuma", section: "C" },
+  "242-115-125": { name: "Md. Mahmudul Hasan Yamin", section: "C" },
+  "242-115-126": { name: "Md. Jubayer Hasan Munna", section: "C" },
+  "242-115-127": { name: "Fahima Akther", section: "C" },
+  "242-115-129": { name: "A.S.M. Nafiu Iqbal", section: "C" },
+  "242-115-130": { name: "Tasmina Begum Rima", section: "C" },
+  "242-115-132": { name: "Md. Mahiyan Noor Mahi", section: "C" },
+  "242-115-133": { name: "Syed Farhan Hussain Rasel", section: "C" },
+  "242-115-135": { name: "Ahammod Ali", section: "C" },
+  "242-115-136": { name: "Bashar Ahmed", section: "C" },
+  "242-115-139": { name: "Avizith Dash", section: "C" },
+  "242-115-140": { name: "Shyamoshree Sinha", section: "C" },
+  "242-115-141": { name: "Susoma Rahman", section: "C" },
+  "242-115-142": { name: "Nuhza Suraia", section: "C" },
+  "242-115-143": { name: "Riktho Saha", section: "C" },
+  "242-115-144": { name: "Sadia Islam", section: "C" },
+  "242-115-145": { name: "Nasisa Tabassum", section: "C" },
+  "242-115-147": { name: "Nuzud Binte Olid", section: "C" },
+  "242-115-148": { name: "Sudeshna Roy Pima", section: "C" },
+  "242-115-151": { name: "Thouhida Yeasmin", section: "D" },
+  "242-115-152": { name: "Tawhid Hussain Chowdhury", section: "D" },
+  "242-115-153": { name: "Abdul Muhit Fahim Chowdhury", section: "D" },
+  "242-115-154": { name: "Md. Tanvirul Islam Tanim", section: "D" },
+  "242-115-155": { name: "Maliha Tabassum Hridila", section: "D" },
+  "242-115-156": { name: "Mohua Pathan Madhobi", section: "D" },
+  "242-115-157": { name: "Abu Bokor Al Moyeen", section: "D" },
+  "242-115-158": { name: "Nabil Abdullah Chowdhury", section: "D" },
+  "242-115-159": { name: "Sharmin Akter", section: "D" },
+  "242-115-160": { name: "Riya Das", section: "D" },
+  "242-115-161": { name: "Senjuti Gupta", section: "D" },
+  "242-115-162": { name: "Shamsul Arefin Kanon", section: "D" },
+  "242-115-163": { name: "Mohsin Hasan", section: "D" },
+  "242-115-164": { name: "Fatema Akter", section: "D" },
+  "242-115-165": { name: "Tahsin Rahman Rijoy", section: "D" },
+  "242-115-166": { name: "Sayed Talha Siddik", section: "D" },
+  "242-115-167": { name: "Ashraul Anam Mashafi", section: "D" },
+  "242-115-168": { name: "Sultana Akter", section: "D" },
+  "242-115-169": { name: "Arman Ahmed", section: "D" },
+  "242-115-170": { name: "Md. Imran Hossen", section: "D" },
+  "242-115-171": { name: "Mukti Rani Paik", section: "D" },
+  "242-115-172": { name: "Mst. Fatheha Rahman Riya", section: "D" },
+  "242-115-173": { name: "Nazmul Islam", section: "D" },
+  "242-115-174": { name: "Nurul Muhsin Najif", section: "D" },
+  "242-115-175": { name: "Fariha Hussain Trina", section: "D" },
+  "242-115-176": { name: "Abdur Rahman Mamun", section: "D" },
+  "242-115-177": { name: "Soumita Acharjee", section: "D" },
+  "242-115-178": { name: "Shahidul Islam Kamran", section: "D" },
+  "242-115-179": { name: "Afzal Hussain Sayem", section: "D" },
+  "242-115-180": { name: "Saif Al Safa", section: "D" },
+  "242-115-181": { name: "Shuvo Debnath", section: "D" },
+  "242-115-182": { name: "Md. Nadim Fazla Rafi", section: "D" },
+  "242-115-183": { name: "Debojyoti Talukder Raj", section: "D" },
+  "242-115-184": { name: "Tonmoy Chakrabarty", section: "D" },
+  "242-115-185": { name: "Madhobe Gosh", section: "D" },
+  "242-115-186": { name: "Shruti Das Pourkaystha", section: "D" },
+  "242-115-187": { name: "Tanjina Tasnim Tahsin", section: "D" },
+  "242-115-188": { name: "Sumir Paul", section: "D" },
+  "242-115-189": { name: "Mahadi Hasan Tanim", section: "D" },
+  "242-115-190": { name: "Sumaiya Jaman Urmi", section: "D" },
+  "242-115-191": { name: "Nondita Ray", section: "D" },
+  "242-115-192": { name: "Sheikh Sumaiya Binte Musa", section: "D" },
+  "242-115-193": { name: "Sheikh Nafisa Montaha", section: "D" },
+  "242-115-194": { name: "Aysha Akther Tanni", section: "D" },
+  "242-115-195": { name: "Md. Shorifull Hasan Oni", section: "D" },
+  "242-115-196": { name: "Tarek Amin", section: "D" },
+  "242-115-197": { name: "Tabassuma Bushra Masuma", section: "D" },
+  "242-115-198": { name: "Muhammad Mahbubur Rahman Shahan", section: "D" },
+  "242-115-199": { name: "Umma Rumman Jim", section: "D" },
+  "242-115-200": { name: "Bishal Sutradher", section: "D" },
+  "232-115-242": { name: "Rawful Islam Rifat", section: "E" },
+  "232-115-345": { name: "Shorna Nandi", section: "E" },
+  "242-115-202": { name: "Towhidul Islam", section: "E" },
+  "242-115-206": { name: "Uttsho Debnath", section: "E" },
+  "242-115-207": { name: "Md. Obayedur Rahman", section: "E" },
+  "242-115-208": { name: "Halima Begum", section: "E" },
+  "242-115-210": { name: "Rahnuma Mostafa", section: "E" },
+  "242-115-211": { name: "Tanvi Khan", section: "E" },
+  "242-115-212": { name: "Bishakha Chanda", section: "E" },
+  "242-115-213": { name: "Shimla Sinha", section: "E" },
+  "242-115-214": { name: "Syed Ehsan Hussan", section: "E" },
+  "242-115-215": { name: "Bijay Krishna Paul", section: "E" },
+  "242-115-216": { name: "Miftahul Islam Fahim", section: "E" },
+  "242-115-219": { name: "Syeda Nusrat Jahan Rini", section: "E" },
+  "242-115-220": { name: "Umme Koli", section: "E" },
+  "242-115-221": { name: "Nusrat Jahan Muntaha", section: "E" },
+  "242-115-222": { name: "Tafhima Murshed Adri", section: "E" },
+  "242-115-224": { name: "Sabbiha Afrin Suchi", section: "E" },
+  "242-115-225": { name: "Fahim Muntasir Sadi", section: "E" },
+  "242-115-226": { name: "Sabiha Sami", section: "E" },
+  "242-115-227": { name: "Showvik Sharma", section: "E" },
+  "242-115-229": { name: "Jarin Taslim", section: "E" },
+  "242-115-230": { name: "Mashura Khatun Mashu", section: "E" },
+  "242-115-231": { name: "Maisha Farjana Raisa", section: "E" },
+  "242-115-232": { name: "Sukanto Biswas", section: "E" },
+  "242-115-233": { name: "Shrabon", section: "E" },
+  "242-115-235": { name: "Md. Fardin Mahtab", section: "E" },
+  "242-115-236": { name: "Nihal Khan", section: "E" },
+  "242-115-237": { name: "Nafisha Samin", section: "E" },
+  "242-115-238": { name: "Choudhury Adil", section: "E" },
+  "242-115-243": { name: "Amina- Al-adiba", section: "E" },
+  "242-115-244": { name: "Ratul Chakraborty", section: "E" },
+  "242-115-245": { name: "Md. Mehedi Hasan", section: "E" },
+  "242-115-246": { name: "Farzana Rahman Riya", section: "E" },
+  "242-115-247": { name: "Mahdee Haque", section: "E" },
+  "242-115-248": { name: "Tarek Ahmed Oyan", section: "E" },
+  "242-115-249": { name: "Sabysachi Das Tony", section: "E" },
+  "242-115-250": { name: "Mehedi Hasan", section: "E" },
+  "242-115-149": { name: "Farzana Akter Saeeda", section: "G" },
+  "242-115-150": { name: "Sabuj Hasan", section: "G" },
+  "241-115-249": { name: "Fatima Islam Shaki", section: "G" },
+  "241-115-152": { name: "Tinni Bonik", section: "G" },
+  "242-115-301": { name: "Nafisa Rahman Ramisa", section: "G" },
+  "242-115-302": { name: "Pritam Shakar Deb", section: "G" },
+  "242-115-303": { name: "Rubaiya Rahman Akhi", section: "G" },
+  "242-115-305": { name: "Pollab Das", section: "G" },
+  "242-115-307": { name: "Sabbir Ahmed Rimon", section: "G" },
+  "242-115-308": { name: "Samiha Mahjabin", section: "G" },
+  "242-115-311": { name: "Umme Habiba Nuha", section: "G" },
+  "242-115-313": { name: "Debapratim Deb", section: "G" },
+  "242-115-314": { name: "Falguni Sharmma", section: "G" },
+  "242-115-321": { name: "Nusrat Jahan Nuha", section: "G" },
+  "242-115-322": { name: "Israt Jahan Bithy", section: "G" },
+  "242-115-324": { name: "Gourab Chakrabarty", section: "G" },
+  "242-115-325": { name: "Joy Baktchi", section: "G" },
+  "242-115-326": { name: "Adrita Chakrabarty Richi", section: "G" },
+  "242-115-327": { name: "Manzurul Ambia", section: "G" },
+  "242-115-328": { name: "Alok Talukder", section: "G" },
+  "242-115-331": { name: "Tonnoy Datta Bishal", section: "G" },
+  "242-115-332": { name: "Fahmida Yeasmin Momi", section: "G" },
+  "242-115-334": { name: "Tamzida Habiba Mim", section: "G" },
+  "242-115-335": { name: "Tahsin Rahman", section: "G" },
+  "242-115-336": { name: "Dabosri Roy Porna", section: "G" },
+  "242-115-337": { name: "Promick Dastidar Sami", section: "G" },
+  "242-115-342": { name: "Mahzabin Rahman Moumita", section: "G" },
+  "242-115-343": { name: "Banidipa Chakraborty", section: "G" },
+  "242-115-344": { name: "Md. Al-amin Ahmed Chowdhur", section: "G" },
+  "242-115-346": { name: "Md. Sami Jamali", section: "G" },
+  "242-115-347": { name: "Muhammad Hanif", section: "G" }
 };
 
-// Section-wise faculty list parsed from context[cite: 3]
-const facultyDatabase = {
+// Section-wise Faculty Mapping
+const sectionFacultyMap = {
   "A": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Fardin Ahasan Maraz", dept: "Electrical & Electronic Engineering", desig: "Professor" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Business Administration", desig: "Professor" }
+    { name: "Mashia Hossain", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Barnali Sarker Shoumita (OS)", course: "Operating System", code: "CSE 321", desig: "Teaching Assistant", dept: "Department of Computer Science & Engineering" },
+    { name: "Barnali Sarker Shoumita (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Teaching Assistant", dept: "Department of Computer Science & Engineering" },
+    { name: "Khadia Akter", course: "Business Communication", code: "GED 431", desig: "Lecturer", dept: "Department of Business Administration" }
   ],
   "B": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Fardin Ahasan Maraz", dept: "Electrical & Electronic Engineering", desig: "Professor" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Business Administration", desig: "Professor" }
+    { name: "Wadia Iqbal Chowdhury", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Software Engineering" },
+    { name: "Samia Rahman Rima (OS)", course: "Operating System", code: "CSE 321", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Samia Rahman Rima (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Khadia Akter", course: "Business Communication", code: "GED 431", desig: "Lecturer", dept: "Department of Business Administration" }
   ],
   "C": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Samia Rahman Rima", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
+    { name: "Wadia Iqbal Chowdhury", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Software Engineering" },
+    { name: "Samia Rahman Rima (OS)", course: "Operating System", code: "CSE 321", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Samia Rahman Rima (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Khadia Akter", course: "Business Communication", code: "GED 431", desig: "Lecturer", dept: "Department of Business Administration" }
   ],
   "D": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
+    { name: "Wadia Iqbal Chowdhury", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Software Engineering" },
+    { name: "Samia Rahman Rima (OS)", course: "Operating System", code: "CSE 321", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Samia Rahman Rima (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Dr. Md. Razaul Haque", course: "Business Communication", code: "GED 431", desig: "Assistant Professor", dept: "Department of Business Administration" }
   ],
   "E": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Afif Rafsan", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
+    { name: "Md. Imam Mahdi", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Electrical and Electronic Engineering" },
+    { name: "Khalid Bin Selim (OS)", course: "Operating System", code: "CSE 321", desig: "Teaching Assistant", dept: "Department of Computer Science & Engineering" },
+    { name: "Khalid Bin Selim (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Teaching Assistant", dept: "Department of Computer Science & Engineering" },
+    { name: "Dr. Md. Razaul Haque", course: "Business Communication", code: "GED 431", desig: "Assistant Professor", dept: "Department of Business Administration" }
   ],
   "F": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Afif Rafsan", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Md. Alaul Haque", dept: "Business Administration", desig: "Lecturer" }
+    { name: "Md. Imam Mahdi", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Electrical and Electronic Engineering" },
+    { name: "Khalid Bin Selim (OS)", course: "Operating System", code: "CSE 321", desig: "Teaching Assistant", dept: "Department of Computer Science & Engineering" },
+    { name: "Khalid Bin Selim (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Teaching Assistant", dept: "Department of Computer Science & Engineering" },
+    { name: "Dr. Md. Razaul Haque", course: "Business Communication", code: "GED 431", desig: "Assistant Professor", dept: "Department of Business Administration" }
   ],
   "G": [
-    { course: "Communication Engineering", code: "CSE 215", name: "Ahmed Istiakur Rahman", dept: "Electrical & Electronic Engineering", desig: "Lecturer" },
-    { course: "Theory of Computation", code: "CSE 327", name: "Abu Jafar Md. Jakaria", dept: "Computer Science and Engineering", desig: "Senior Lecturer" },
-    { course: "Operating System", code: "CSE 321", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Operating System Lab", code: "CSE 322", name: "Mayami Das Purkayastha Purba", dept: "Computer Science and Engineering", desig: "Lecturer" },
-    { course: "Business Communication", code: "GED 431", name: "Dr. Razaul Haque", dept: "Business Administration", desig: "Professor" }
+    { name: "Wadia Iqbal Chowdhury", course: "Communication Engineering", code: "CSE 215", desig: "Lecturer", dept: "Department of Software Engineering" },
+    { name: "Samia Rahman Rima (OS)", course: "Operating System", code: "CSE 321", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Samia Rahman Rima (OS Lab)", course: "Operating System Lab", code: "CSE 322", desig: "Lecturer", dept: "Department of Computer Science & Engineering" },
+    { name: "Dr. Md. Razaul Haque", course: "Business Communication", code: "GED 431", desig: "Assistant Professor", dept: "Department of Business Administration" }
   ]
 };
 
-let currentSection = "B";
-let memberCount = 0;
+let autoMemberCount = 0;
+let customMemberCount = 0;
 
+document.addEventListener("DOMContentLoaded", () => {
+  handleModeChange();
+  formatDateInput();
+});
+
+// Structural mode & type changes
 function handleDocTypeChange() {
   const docTypeSelect = document.getElementById('in-doc-type').value;
   const customHeadingInput = document.getElementById('in-custom-heading');
+  
   if (docTypeSelect === "Custom") {
     customHeadingInput.style.display = "block";
   } else {
     customHeadingInput.style.display = "none";
-    customHeadingInput.value = "";
-  }
-  updatePreview();
-}
-
-function handleModeChange() {
-  const mode = document.getElementById('in-mode').value;
-  const singleContainer = document.getElementById('single-student-container');
-  const groupContainer = document.getElementById('group-input-container');
-  const outSingleStudent = document.getElementById('out-single-student');
-  const outGroupStudents = document.getElementById('out-group-students');
-
-  syncSectionInputVisibility();
-
-  if (mode === 'group') {
-    singleContainer.style.display = "none";
-    groupContainer.style.display = "block";
-    outSingleStudent.style.display = "none";
-    outGroupStudents.style.display = "block";
-    const wrapper = document.getElementById('member-fields-wrapper');
-    if (wrapper.children.length === 0) {
-      addGroupMemberField();
-    }
-  } else {
-    singleContainer.style.display = "block";
-    groupContainer.style.display = "none";
-    outSingleStudent.style.display = "block";
-    outGroupStudents.style.display = "none";
-  }
-  updatePreview();
-}
-
-function handleEntryTypeChange() {
-  const entryType = document.getElementById('in-entry-type').value;
-  const singleIdBox = document.getElementById('single-id-box');
-  const customStudentFields = document.getElementById('custom-student-fields');
-  const isCustom = entryType === 'custom';
-
-  syncSectionInputVisibility();
-
-  if (isCustom) {
-    singleIdBox.style.display = "block";
-    customStudentFields.style.display = "block";
-    document.getElementById('in-student-name').readOnly = false;
-  } else {
-    singleIdBox.style.display = "block";
-    customStudentFields.style.display = "none";
-    document.getElementById('in-student-name').readOnly = true;
-  }
-
-  const grpNames = document.getElementsByClassName('grp-mem-name');
-  for (let input of grpNames) {
-    input.readOnly = !isCustom;
-  }
-
-  updatePreview();
-}
-
-function handleTeacherEntryTypeChange() {
-  const teacherEntryType = document.getElementById('in-teacher-entry-type').value;
-  const autoFacultyContainer = document.getElementById('auto-faculty-container');
-  const isCustomTeacher = teacherEntryType === 'custom';
-
-  if (isCustomTeacher) {
-    autoFacultyContainer.style.display = "none";
-    document.getElementById('in-course').readOnly = false;
-    document.getElementById('in-code').readOnly = false;
-    document.getElementById('in-prof-name').readOnly = false;
-    document.getElementById('in-prof-desig').readOnly = false;
-    document.getElementById('in-prof-dept').readOnly = false;
-  } else {
-    autoFacultyContainer.style.display = "block";
-    document.getElementById('in-course').readOnly = true;
-    document.getElementById('in-code').readOnly = true;
-    document.getElementById('in-prof-name').readOnly = true;
-    document.getElementById('in-prof-desig').readOnly = true;
-    document.getElementById('in-prof-dept').readOnly = true;
-    updateFacultyDropdown(currentSection);
-  }
-  updatePreview();
-}
-
-function syncSectionInputVisibility() {
-  const mode = document.getElementById('in-mode').value;
-  const entryType = document.getElementById('in-entry-type').value;
-  const sectionWrapper = document.getElementById('section-input-wrapper');
-
-  // Show section input manually if in Group Mode OR Custom Entry Mode
-  if (mode === 'group' || entryType === 'custom') {
-    sectionWrapper.style.display = "block";
-  } else {
-    sectionWrapper.style.display = "none";
-  }
-}
-
-function handleManualSectionChange() {
-  const secInput = document.getElementById('in-section').value.trim();
-  if (secInput !== "") {
-    currentSection = secInput.toUpperCase();
-    if (document.getElementById('in-teacher-entry-type').value === 'auto') {
-      updateFacultyDropdown(currentSection);
-    }
-  }
-  updatePreview();
-}
-
-function handleSingleIdInput() {
-  const entryType = document.getElementById('in-entry-type').value;
-  if (entryType === 'custom') {
-    updatePreview();
-    return;
-  }
-
-  const idVal = document.getElementById('in-student-id').value.trim();
-  const nameInput = document.getElementById('in-student-name');
-  if (studentDatabase[idVal]) {
-    nameInput.value = studentDatabase[idVal].name;
-    currentSection = studentDatabase[idVal].section;
-    document.getElementById('in-section').value = currentSection;
-    if (document.getElementById('in-teacher-entry-type').value === 'auto') {
-      updateFacultyDropdown(currentSection);
-    }
-  } else {
-    nameInput.value = "";
-  }
-  updatePreview();
-}
-
-function handleMemberIdInput(index) {
-  const entryType = document.getElementById('in-entry-type').value;
-  const row = document.getElementById(`member-row-${index}`);
-  if (!row) return;
-
-  if (entryType === 'custom') {
-    updatePreview();
-    return;
-  }
-
-  const idVal = row.querySelector('.grp-mem-id').value.trim();
-  const nameInput = row.querySelector('.grp-mem-name');
-
-  if (studentDatabase[idVal]) {
-    nameInput.value = studentDatabase[idVal].name;
-  } else {
-    nameInput.value = "";
-  }
-  updatePreview();
-}
-
-function updateFacultyDropdown(section) {
-  const select = document.getElementById('in-course-select');
-  select.innerHTML = '<option value="">Select Course / Teacher</option>';
-  const faculties = facultyDatabase[section] || facultyDatabase['B'];
-
-  faculties.forEach((item, index) => {
-    const option = document.createElement('option');
-    option.value = index;
-    option.textContent = `${item.course} (${item.code}) - ${item.name}`;
-    select.appendChild(option);
-  });
-
-  clearFacultyFields();
-}
-
-function clearFacultyFields() {
-  document.getElementById('in-course').value = "";
-  document.getElementById('in-code').value = "";
-  document.getElementById('in-prof-name').value = "";
-  document.getElementById('in-prof-desig').value = "";
-  document.getElementById('in-prof-dept').value = "";
-}
-
-function handleCourseTeacherChange() {
-  const selectedIndex = document.getElementById('in-course-select').value;
-  const faculties = facultyDatabase[currentSection] || facultyDatabase['B'];
-  const selected = faculties[selectedIndex];
-
-  if (selected) {
-    document.getElementById('in-course').value = selected.course;
-    document.getElementById('in-code').value = selected.code;
-    document.getElementById('in-prof-name').value = selected.name;
-    document.getElementById('in-prof-desig').value = selected.desig;
-    document.getElementById('in-prof-dept').value = selected.dept;
-  } else {
-    clearFacultyFields();
+    customHeadingInput.value = ""; 
   }
   updatePreview();
 }
@@ -358,40 +324,244 @@ function toggleGroupNameInput() {
   updatePreview();
 }
 
-function addGroupMemberField() {
-  memberCount++;
-  const wrapper = document.getElementById('member-fields-wrapper');
-  const row = document.createElement('div');
-  row.className = 'member-input-row';
-  row.id = `member-row-${memberCount}`;
-
+function handleModeChange() {
+  const mode = document.getElementById('in-mode').value;
   const entryType = document.getElementById('in-entry-type').value;
-  const isCustom = entryType === 'custom';
+  
+  const outSingle = document.getElementById('out-single-student');
+  const outGroup = document.getElementById('out-group-students');
 
-  row.innerHTML = `
-    <input type="text" class="grp-mem-id" placeholder="ID (e.g. 242-115-079)" oninput="handleMemberIdInput(${memberCount})">
-    <input type="text" class="grp-mem-name" placeholder="Member Name" oninput="updatePreview()" ${isCustom ? '' : 'readonly'}>
-    <button type="button" class="remove-member-btn" onclick="removeGroupMemberField(${memberCount})">×</button>
-  `;
-  wrapper.appendChild(row);
+  if (mode === "individual") {
+    outSingle.style.display = "block";
+    outGroup.style.display = "none";
+    document.getElementById('out-group-name-wrapper').style.display = "none";
+  } else {
+    outSingle.style.display = "none";
+    outGroup.style.display = "block";
+  }
+
+  handleEntryTypeChange();
+}
+
+function handleEntryTypeChange() {
+  const mode = document.getElementById('in-mode').value;
+  const entryType = document.getElementById('in-entry-type').value;
+
+  const indAuto = document.getElementById('ind-auto-container');
+  const grpAuto = document.getElementById('grp-auto-container');
+  const customContainer = document.getElementById('custom-fields-container');
+  const autoFaculty = document.getElementById('auto-faculty-container');
+  const custIndExtra = document.getElementById('cust-ind-extra');
+  const customGroupMembers = document.getElementById('custom-group-members');
+
+  if (entryType === 'auto') {
+    customContainer.style.display = "none";
+    autoFaculty.style.display = "block";
+
+    if (mode === 'individual') {
+      indAuto.style.display = "block";
+      grpAuto.style.display = "none";
+      handleIndAutoLookup();
+    } else {
+      indAuto.style.display = "none";
+      grpAuto.style.display = "block";
+      const wrapper = document.getElementById('group-member-lookup-wrapper');
+      if (wrapper.children.length === 0) {
+        addGroupAutoMemberField();
+      } else {
+        handleGroupAutoLookup();
+      }
+    }
+  } else {
+    // Custom Mode
+    indAuto.style.display = "none";
+    grpAuto.style.display = "none";
+    autoFaculty.style.display = "none";
+    customContainer.style.display = "block";
+
+    if (mode === 'individual') {
+      custIndExtra.style.display = "block";
+      customGroupMembers.style.display = "none";
+      document.getElementById('cust-student-name').style.display = "block";
+      document.getElementById('cust-student-id').style.display = "block";
+    } else {
+      custIndExtra.style.display = "none";
+      customGroupMembers.style.display = "block";
+      document.getElementById('cust-student-name').style.display = "none";
+      document.getElementById('cust-student-id').style.display = "none";
+      
+      const custWrapper = document.getElementById('custom-member-fields-wrapper');
+      if (custWrapper.children.length === 0) {
+        addCustomGroupMemberField();
+      }
+    }
+  }
   updatePreview();
 }
 
-function removeGroupMemberField(id) {
-  const row = document.getElementById(`member-row-${id}`);
-  if (row) { row.remove(); }
-  updatePreview();
+// Auto Lookup Helpers
+function handleIndAutoLookup() {
+  const id = document.getElementById('in-ind-id').value.trim();
+  const student = studentsDatabase[id];
+  if (student) {
+    document.getElementById('out-student-name').innerText = student.name;
+    document.getElementById('out-student-id').innerText = id;
+    document.getElementById('out-section').innerText = student.section;
+    populateFacultyDropdown(student.section);
+  } else {
+    document.getElementById('out-student-name').innerText = id ? "Not Found" : "...";
+    document.getElementById('out-student-id').innerText = id || "...";
+  }
+}
+
+function populateFacultyDropdown(section) {
+  const select = document.getElementById('in-prof-name');
+  select.innerHTML = '<option value="">-- Select Faculty --</option>';
+  
+  const faculties = sectionFacultyMap[section] || [];
+  faculties.forEach((f, idx) => {
+    const opt = document.createElement('option');
+    opt.value = `${section}_${idx}`;
+    opt.innerText = `${f.name} (${f.course})`;
+    select.appendChild(opt);
+  });
+  
+  autoFillFacultyDetails();
+}
+
+function autoFillFacultyDetails() {
+  const val = document.getElementById('in-prof-name').value;
+  if (!val) {
+    document.getElementById('out-course').innerText = "...";
+    document.getElementById('out-code').innerText = "...";
+    document.getElementById('out-prof-name').innerText = "...";
+    document.getElementById('out-prof-desig').innerText = "...";
+    document.getElementById('out-prof-dept').innerText = "...";
+    return;
+  }
+
+  const [section, idx] = val.split('_');
+  const faculty = sectionFacultyMap[section][idx];
+
+  document.getElementById('out-course').innerText = faculty.course;
+  document.getElementById('out-code').innerText = faculty.code;
+  document.getElementById('out-prof-name').innerText = faculty.name.split(' (')[0];
+  document.getElementById('out-prof-desig').innerText = faculty.desig;
+  document.getElementById('out-prof-dept').innerText = faculty.dept;
+}
+
+// Group Auto Mode Fields
+function addGroupAutoMemberField() {
+  autoMemberCount++;
+  const wrapper = document.getElementById('group-member-lookup-wrapper');
+  const row = document.createElement('div');
+  row.className = 'member-input-row';
+  row.id = `auto-mem-row-${autoMemberCount}`;
+  row.innerHTML = `
+    <input type="text" class="grp-auto-id" placeholder="Student ID" oninput="handleGroupAutoLookup()">
+    <input type="text" class="grp-auto-name-disp" placeholder="Name (Auto)" readonly>
+    <button type="button" class="remove-member-btn" onclick="removeGroupAutoMemberField(${autoMemberCount})">×</button>
+  `;
+  wrapper.appendChild(row);
+  handleGroupAutoLookup();
+}
+
+function removeGroupAutoMemberField(id) {
+  const row = document.getElementById(`auto-mem-row-${id}`);
+  if (row) row.remove();
+  handleGroupAutoLookup();
+}
+
+function handleGroupAutoLookup() {
+  const idInputs = document.getElementsByClassName('grp-auto-id');
+  const nameDisps = document.getElementsByClassName('grp-auto-name-disp');
+  const tbody = document.getElementById('out-member-rows');
+  tbody.innerHTML = "";
+
+  let detectedSection = "";
+
+  for (let i = 0; i < idInputs.length; i++) {
+    const idVal = idInputs[i].value.trim();
+    const student = studentsDatabase[idVal];
+    let nameVal = "";
+
+    if (student) {
+      nameVal = student.name;
+      if (!detectedSection) detectedSection = student.section;
+    } else if (idVal) {
+      nameVal = "Not Found";
+    }
+
+    nameDisps[i].value = nameVal;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${nameVal || "..."}</td><td style="text-align:center;">${idVal || "..."}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  if (detectedSection) {
+    document.getElementById('out-section').innerText = detectedSection;
+    populateFacultyDropdown(detectedSection);
+  }
+}
+
+// Group Custom Mode Fields
+function addCustomGroupMemberField() {
+  customMemberCount++;
+  const wrapper = document.getElementById('custom-member-fields-wrapper');
+  const row = document.createElement('div');
+  row.className = 'member-input-row';
+  row.id = `cust-mem-row-${customMemberCount}`;
+  row.innerHTML = `
+    <input type="text" class="cust-grp-name" placeholder="Member Name" oninput="updateCustomGroupPreview()">
+    <input type="text" class="cust-grp-id" placeholder="Member ID" oninput="updateCustomGroupPreview()">
+    <button type="button" class="remove-member-btn" onclick="removeCustomGroupMemberField(${customMemberCount})">×</button>
+  `;
+  wrapper.appendChild(row);
+  updateCustomGroupPreview();
+}
+
+function removeCustomGroupMemberField(id) {
+  const row = document.getElementById(`cust-mem-row-${id}`);
+  if (row) row.remove();
+  updateCustomGroupPreview();
+}
+
+function updateCustomGroupPreview() {
+  const names = document.getElementsByClassName('cust-grp-name');
+  const ids = document.getElementsByClassName('cust-grp-id');
+  const tbody = document.getElementById('out-member-rows');
+  tbody.innerHTML = "";
+
+  for (let i = 0; i < names.length; i++) {
+    const mName = names[i].value || "...";
+    const mId = ids[i].value || "...";
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${mName}</td><td style="text-align:center;">${mId}</td>`;
+    tbody.appendChild(tr);
+  }
 }
 
 function formatDate(dateString) {
-  if (!dateString) return "";
+  if (!dateString) return "__________________";
   const date = new Date(dateString);
   const day = String(date.getDate()).padStart(2, '0');
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   return `${day} ${months[date.getMonth()]} ${date.getFullYear()}`;
 }
 
+function formatDateInput() {
+  const dateInput = document.getElementById('in-date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+    updatePreview();
+  }
+}
+
+// Master Preview Update Switch
 function updatePreview() {
+  // Document Type Header
   const docTypeSelect = document.getElementById('in-doc-type').value;
   if (docTypeSelect === "Custom") {
     const customVal = document.getElementById('in-custom-heading').value;
@@ -400,55 +570,43 @@ function updatePreview() {
     document.getElementById('out-doc-type').innerText = docTypeSelect;
   }
 
-  document.getElementById('out-course').innerText = document.getElementById('in-course').value || "...";
-  document.getElementById('out-code').innerText = document.getElementById('in-code').value || "...";
-  document.getElementById('out-prof-name').innerText = document.getElementById('in-prof-name').value || "...";
-  document.getElementById('out-prof-desig').innerText = document.getElementById('in-prof-desig').value || "...";
-  document.getElementById('out-prof-dept').innerText = document.getElementById('in-prof-dept').value || "...";
+  // Group Name update
+  const groupName = document.getElementById('in-group-name').value;
+  document.getElementById('out-group-name').innerText = groupName || "...";
 
-  document.getElementById('out-assign-title').innerText = document.getElementById('in-assign-title').value || "";
-  document.getElementById('out-group-name').innerText = document.getElementById('in-group-name').value || "...";
-
-  const mode = document.getElementById('in-mode').value;
-  const isCustomStudent = document.getElementById('in-entry-type').value === 'custom';
-  
-  const manualSecVal = document.getElementById('in-section').value.trim();
-  if (manualSecVal !== "") {
-    document.getElementById('out-section').innerText = manualSecVal;
-  } else {
-    document.getElementById('out-section').innerText = currentSection;
-  }
-
-  if (isCustomStudent) {
-    document.getElementById('out-batch').innerHTML = document.getElementById('in-batch').value || "61<sup>st</sup>";
-    document.getElementById('out-student-dept').innerText = document.getElementById('in-student-dept').value || "Department of Computer Science and Engineering";
-  } else {
-    document.getElementById('out-batch').innerHTML = "61<sup>st</sup>";
-    document.getElementById('out-student-dept').innerText = "Department of Computer Science and Engineering";
-  }
-
-  document.getElementById('out-student-name').innerText = document.getElementById('in-student-name').value || "...";
-  document.getElementById('out-student-id').innerText = document.getElementById('in-student-id').value || "...";
-
-  if (mode === 'group') {
-    const names = document.getElementsByClassName('grp-mem-name');
-    const ids = document.getElementsByClassName('grp-mem-id');
-    const tbody = document.getElementById('out-member-rows');
-    tbody.innerHTML = "";
-    for (let i = 0; i < names.length; i++) {
-      const mName = names[i].value || "...";
-      const mId = ids[i] ? (ids[i].value || "...") : "N/A";
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${mName}</td><td style="text-align:center;">${mId}</td>`;
-      tbody.appendChild(tr);
-    }
-  }
-
+  // Date
   const rawDate = document.getElementById('in-date').value;
   document.getElementById('out-date').innerText = formatDate(rawDate);
-}
 
-window.onload = function() {
-  handleTeacherEntryTypeChange();
-  handleEntryTypeChange();
-};
+  const entryType = document.getElementById('in-entry-type').value;
+  const mode = document.getElementById('in-mode').value;
+
+  if (entryType === 'custom') {
+    document.getElementById('out-course').innerText = document.getElementById('cust-course-name').value || "...";
+    document.getElementById('out-code').innerText = document.getElementById('cust-course-code').value || "...";
+    document.getElementById('out-prof-name').innerText = document.getElementById('cust-teacher-name').value || "...";
+    document.getElementById('out-prof-desig').innerText = document.getElementById('cust-teacher-desig').value || "...";
+    document.getElementById('out-prof-dept').innerText = document.getElementById('cust-teacher-dept').value || "...";
+
+    if (mode === 'individual') {
+      document.getElementById('out-student-name').innerText = document.getElementById('cust-student-name').value || "...";
+      document.getElementById('out-student-id').innerText = document.getElementById('cust-student-id').value || "...";
+      document.getElementById('out-section').innerText = document.getElementById('cust-section').value || "...";
+      document.getElementById('out-batch').innerText = document.getElementById('cust-batch').value || "...";
+      document.getElementById('out-dept').innerText = document.getElementById('cust-dept').value || "...";
+    } else {
+      document.getElementById('out-section').innerText = "...";
+      document.getElementById('out-batch').innerText = "61st";
+      document.getElementById('out-dept').innerText = "Department of Computer Science and Engineering";
+      updateCustomGroupPreview();
+    }
+  } else {
+    document.getElementById('out-batch').innerText = "61st";
+    document.getElementById('out-dept').innerText = "Department of Computer Science and Engineering";
+    if (mode === 'individual') {
+      handleIndAutoLookup();
+    } else {
+      handleGroupAutoLookup();
+    }
+  }
+}
